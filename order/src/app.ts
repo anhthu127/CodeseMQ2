@@ -3,7 +3,7 @@ import express from 'express';
 import { json } from 'body-parser';
 
 //router
-import { helloRouter } from './routes/hello.route';
+import { helloRouter } from './routes/order.route';
 import { codesePool, query } from './configs/database.config';
 
 const app = express();

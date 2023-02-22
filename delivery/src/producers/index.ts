@@ -1,7 +1,7 @@
 import { KafkaEnum } from "../constants/common"
 import { isProducerConnected, producer } from "../configs/kafka.config"
 
-export const pushToQueue = async (message: string, orderName: string, id: number): Promise<void> => {
+export const pushToQueue = async (message: string, paymentName: string, id: number): Promise<void> => {
     let i = 0;
     try {
         if (isProducerConnected) {
@@ -9,8 +9,8 @@ export const pushToQueue = async (message: string, orderName: string, id: number
                 await producer.send({
                     topic: KafkaEnum.orderTopicName,
                     messages: [{
-                        value: JSON.stringify({ paymentName: orderName, id: id }),
-                        key: `order ${message}`
+                        value: JSON.stringify({ paymentName: paymentName, id: id }),
+                        key: `delivery ${message}`
                     }],
                 })
                 i += 1;

@@ -3,7 +3,7 @@ import express from 'express';
 import { json } from 'body-parser';
 
 //router
-import { helloRouter } from './routes/hello.route';
+import { helloRouter } from './routes/delivery.route';
 import { codesePool, query } from './configs/database.config';
 
 const app = express();
@@ -12,6 +12,7 @@ const createTable = async () => {
     return await query(codesePool, createTableSql)
 }
 createTable()
+
 app.set('trust proxy', true); //trust HTTPS connection
 app.use(json());
 

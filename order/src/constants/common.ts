@@ -1,4 +1,6 @@
 export const KafkaEnum = {
     kafkaMessageQueue: "Result-Notifications",
-    topicName: "topic-result"
+    paymentTopicName: "payment-topic-result",
+    orderTopicName: "order-topic-result",
+    deliveryTopicName: "delivery-topic-result"
 }
